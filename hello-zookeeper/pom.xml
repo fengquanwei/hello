@@ -9,16 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hello-kafka</artifactId>
+    <artifactId>hello-zookeeper</artifactId>
     <packaging>war</packaging>
 
-    <name>hello-kafka Maven Webapp</name>
+    <name>hello-zookeeper Maven Webapp</name>
     <url>https://github.com/fengquanwei</url>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>zookeeper</artifactId>
         </dependency>
     </dependencies>
 
