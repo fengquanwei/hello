@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.zookeeper;
+package com.fengquanwei.hello.zookeeper.client;
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
@@ -13,14 +13,14 @@ import java.util.concurrent.CountDownLatch;
  * @author fengquanwei
  * @create 2018/5/15 15:57
  **/
-public class BasicUsage {
+public class ZooKeeperBasicUsage {
     public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
         System.out.println("========== Connect ZooKeeper ==========");
 
         // 创建会话
         CountDownLatch countDownLatch = new CountDownLatch(1);
         MyWatcher myWatcher = new MyWatcher(countDownLatch);
-        ZooKeeper zooKeeper = new ZooKeeper("127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183", 5000, myWatcher);
+        ZooKeeper zooKeeper = new ZooKeeper("127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183/test", 5000, myWatcher);
         System.out.println("ZooKeeper state: " + zooKeeper.getState());
         countDownLatch.await();
         System.out.println("ZooKeeper session established");
@@ -30,7 +30,7 @@ public class BasicUsage {
         myWatcher = new MyWatcher(countDownLatch);
         long sessionId = zooKeeper.getSessionId();
         byte[] sessionPasswd = zooKeeper.getSessionPasswd();
-        zooKeeper = new ZooKeeper("127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183", 5000, myWatcher, sessionId, sessionPasswd);
+        zooKeeper = new ZooKeeper("127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183/test", 5000, myWatcher, sessionId, sessionPasswd);
         System.out.println("ZooKeeper reconnect state: " + zooKeeper.getState());
         countDownLatch.await();
         System.out.println("ZooKeeper session reconnected");
