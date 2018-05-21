@@ -18,31 +18,54 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
 
-        <kafka.clients.version>0.10.0.0</kafka.clients.version>
+        <kafka-clients.version>0.10.0.0</kafka-clients.version>
         <zookeeper.version>3.3.1</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
+        <curator-framework.version>2.4.2</curator-framework.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!--kafka-->
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
-                <version>${kafka.clients.version}</version>
+                <version>${kafka-clients.version}</version>
             </dependency>
 
-            <!--ZooKeeper 原生 Java 客户端-->
+            <!--zookeeper client-->
             <dependency>
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>zookeeper</artifactId>
                 <version>${zookeeper.version}</version>
             </dependency>
 
-            <!--zkclient 客户端-->
+            <!--zookeeper zkclient-->
             <dependency>
                 <groupId>com.github.sgroschupf</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
+            </dependency>
+
+            <!--zookeeper curator-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator-framework.version}</version>
+            </dependency>
+
+            <!--zookeeper curator recipes-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator-framework.version}</version>
+            </dependency>
+
+            <!--zookeeper curator test-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-test</artifactId>
+                <version>${curator-framework.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

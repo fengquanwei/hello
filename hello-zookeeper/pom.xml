@@ -16,14 +16,34 @@
     <url>https://github.com/fengquanwei</url>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>zookeeper</artifactId>
-        </dependency>
-
+        <!--zookeeper zkclient-->
         <dependency>
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.zookeeper</groupId>
+                    <artifactId>zookeeper</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--zookeeper curator-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+        </dependency>
+
+        <!--zookeeper curator recipes-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+        </dependency>
+
+        <!--zookeeper curator test-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-test</artifactId>
         </dependency>
     </dependencies>
 
