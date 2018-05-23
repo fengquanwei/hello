@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--声明 XML 模式（XSD 文件），这些文件配置了 XML 元素-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/util
+                    http://www.springframework.org/schema/util/spring-util.xsd ">
+
+    <!--util 命名空间-->
+    <util:list id="stringList">
+        <value>String1</value>
+        <value>String2</value>
+        <value>String3</value>
+    </util:list>
+
+    <!--默认的 bean ID 是全限定类名加计数：com.fengquanwei.spring.config.xmlconfig.ImplementA#0-->
+    <bean id="interfaceA" class="com.fengquanwei.hello.spring.di.config.xmlconfig.ImplementA"/>
+
+    <!--构造器注入：使用 constructor 元素【Option1:1】-->
+    <bean id="interfaceB" class="com.fengquanwei.hello.spring.di.config.xmlconfig.ImplementB">
+        <constructor-arg ref="interfaceA"/>
+        <constructor-arg value="string"/>
+        <constructor-arg ref="stringList"/>
+        <!--注入 null-->
+        <!--<constructor-arg><null/></constructor-arg>-->
+        <property name="integer" value="100"/>
+    </bean>
+
+    <!--构造器注入：使用命名空间，可以使用参数名或者参数索引指定参数【Option1:2】-->
+    <!--<bean id="interfaceB" class="com.fengquanwei.hello.spring.di.config.xmlconfig.ImplementB"-->
+    <!--c:_0-ref="interfaceA"-->
+    <!--c:_1="string"-->
+    <!--c:_2-ref="stringList"-->
+    <!--p:integer="100"/>-->
+
+</beans>
