@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--每个 beans 代表一个环境，可以配置多个 beans 元素代表不同的环境；也可以用多个配置文件表示多个环境，每个配置文件的根 beans 设置 profile-->
+    <beans profile="dev">
+        <bean id="interfaceA" class="com.fengquanwei.hello.spring.di.advanced.profile.ImplementA"/>
+    </beans>
+
+    <beans profile="prd">
+        <bean id="interfaceB" class="com.fengquanwei.hello.spring.di.advanced.profile.ImplementB"/>
+    </beans>
+
+</beans>
