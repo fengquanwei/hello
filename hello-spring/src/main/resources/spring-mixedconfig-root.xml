@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--导入 XML Config 配置-->
+    <import resource="spring-mixedconfig-a.xml"/>
+    <!--导入 Java Config 配置-->
+    <bean class="com.fengquanwei.hello.spring.di.config.mixedconfig.ConfigB"/>
+    <!--导入 XML Config 配置-->
+    <import resource="spring-mixedconfig-c.xml"/>
+
+</beans>
