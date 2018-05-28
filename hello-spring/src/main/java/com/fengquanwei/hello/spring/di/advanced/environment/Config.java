@@ -19,7 +19,7 @@ public class Config {
     Environment environment;
 
     @Bean
-    public InterfaceA anInterface() {
+    public InterfaceA interfaceA() {
         return new ImplementA(environment.getProperty("name")); // 检索属性值
     }
 }

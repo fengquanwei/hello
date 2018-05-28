@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.di.advanced.environment;
+package com.fengquanwei.hello.spring.di.advanced.placeholder.xmlconfig;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,13 +8,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * 通过 Spring Environment 和属性源注入外部的值
+ * 占位符（XML 配置）
  *
  * @author fengquanwei
  * @create 2017/12/26 16:06
  **/
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = Config.class)
+@ContextConfiguration(locations = "classpath:spring-placeholder.xml")
 public class Client {
     @Autowired
     InterfaceA interfaceA;

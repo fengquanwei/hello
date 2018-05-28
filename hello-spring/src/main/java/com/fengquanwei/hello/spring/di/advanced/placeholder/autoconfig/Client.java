@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.di.advanced.environment;
+package com.fengquanwei.hello.spring.di.advanced.placeholder.autoconfig;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * 通过 Spring Environment 和属性源注入外部的值
+ * 占位符（自动装配）
  *
  * @author fengquanwei
  * @create 2017/12/26 16:06

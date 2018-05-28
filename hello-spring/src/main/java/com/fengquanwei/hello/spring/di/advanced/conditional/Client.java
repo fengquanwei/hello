@@ -17,11 +17,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = Config.class)
 public class Client {
     @Autowired
-    InterfaceA anInterfaceA;
+    InterfaceA interfaceA;
 
     @Test
     public void test() {
-        anInterfaceA.methodA();
-        Assert.assertNotNull(anInterfaceA);
+        interfaceA.methodA();
+        Assert.assertNotNull(interfaceA);
     }
 }
