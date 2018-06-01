@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  **/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Config.class) // 【Option1:1】
-//@ContextConfiguration(locations = "classpath:spring-aop-annotation.xml") // 【Option1:2】
+//@ContextConfiguration(locations = "classpath:spring-aop-annotationconfig.xml") // 【Option1:2】
 public class Client {
     @Autowired
     @Qualifier("implementA1")
