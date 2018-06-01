@@ -12,6 +12,7 @@
         <module>hello-kafka</module>
         <module>hello-zookeeper</module>
         <module>hello-spring</module>
+        <module>hello-util</module>
     </modules>
 
     <properties>
