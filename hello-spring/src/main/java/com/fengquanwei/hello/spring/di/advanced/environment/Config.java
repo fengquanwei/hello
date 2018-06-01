@@ -13,7 +13,7 @@ import org.springframework.core.env.Environment;
  * @create 2017/12/26 16:07
  **/
 @Configuration
-@PropertySource("classpath:spring-environment.properties") // 声明属性源
+@PropertySource("classpath:spring-di-environment.properties") // 声明属性源
 public class Config {
     @Autowired
     Environment environment;

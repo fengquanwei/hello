@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Config.class) // 【Option1:1】
 //@ContextConfiguration(classes = Config4App.class) // 【Option1:2】
-//@ContextConfiguration(locations = "classpath:spring-profile.xml") // 【Option1:3】
+//@ContextConfiguration(locations = "classpath:spring-di-profile.xml") // 【Option1:3】
 @ActiveProfiles({"dev", "prd"}) // 可以同时启动多个环境的配置
 public class Client {
     @Autowired(required = false)

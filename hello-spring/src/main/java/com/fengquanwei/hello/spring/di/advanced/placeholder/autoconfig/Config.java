@@ -14,7 +14,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  **/
 @Configuration
 @ComponentScan
-@PropertySource("classpath:spring-environment.properties")
+@PropertySource("classpath:spring-di-environment.properties")
 public class Config {
     @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {

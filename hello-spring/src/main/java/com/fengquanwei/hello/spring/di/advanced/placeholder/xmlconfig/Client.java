@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @create 2017/12/26 16:06
  **/
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:spring-placeholder.xml")
+@ContextConfiguration(locations = "classpath:spring-di-placeholder.xml")
 public class Client {
     @Autowired
     InterfaceA interfaceA;

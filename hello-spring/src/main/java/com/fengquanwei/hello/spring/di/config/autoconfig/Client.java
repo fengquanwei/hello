@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  **/
 @RunWith(SpringJUnit4ClassRunner.class) // 创建 Spring 应用上下文
 @ContextConfiguration(classes = Config.class) // 配置 Spring 应用上下文：使用 Java Config【Option1:1】
-//@ContextConfiguration(locations = "classpath:spring-autoconfig.xml") // 配置 Spring 应用上下文：使用 XML Config【Option1:2】
+//@ContextConfiguration(locations = "classpath:spring-di-autoconfig.xml") // 配置 Spring 应用上下文：使用 XML Config【Option1:2】
 public class Client {
     // 自动装配
     @Autowired

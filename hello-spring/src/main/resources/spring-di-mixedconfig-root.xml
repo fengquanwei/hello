@@ -5,10 +5,10 @@
                     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--导入 XML Config 配置-->
-    <import resource="spring-mixedconfig-a.xml"/>
+    <import resource="spring-di-mixedconfig-a.xml"/>
     <!--导入 Java Config 配置-->
     <bean class="com.fengquanwei.hello.spring.di.config.mixedconfig.ConfigB"/>
     <!--导入 XML Config 配置-->
-    <import resource="spring-mixedconfig-c.xml"/>
+    <import resource="spring-di-mixedconfig-c.xml"/>
 
 </beans>

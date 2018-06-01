@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  **/
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(classes = Config.class) // 【Option1:1】
-@ContextConfiguration(locations = "classpath:spring-mixedconfig-root.xml") // 【Option1:2】
+@ContextConfiguration(locations = "classpath:spring-di-mixedconfig-root.xml") // 【Option1:2】
 public class Client {
     @Autowired
     InterfaceB interfaceB;

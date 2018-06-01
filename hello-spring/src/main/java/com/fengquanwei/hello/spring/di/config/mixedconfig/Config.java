@@ -12,6 +12,6 @@ import org.springframework.context.annotation.ImportResource;
  **/
 @Configuration
 @Import({ConfigA.class, ConfigB.class}) // 导入 Java Config 配置
-@ImportResource("classpath:spring-mixedconfig-c.xml") // 导入 XML Config 配置
+@ImportResource("classpath:spring-di-mixedconfig-c.xml") // 导入 XML Config 配置
 public class Config {
 }
