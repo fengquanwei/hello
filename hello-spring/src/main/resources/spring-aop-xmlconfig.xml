@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/aop
+                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="implementA" class="com.fengquanwei.hello.spring.aop.xmlconfig.ImplementA"/>
+    <bean id="implementB" class="com.fengquanwei.hello.spring.aop.xmlconfig.ImplementB"/>
+    <bean id="implementC" class="com.fengquanwei.hello.spring.aop.xmlconfig.ImplementC"/>
+    <bean id="implementD" class="com.fengquanwei.hello.spring.aop.xmlconfig.ImplementD"/>
+    <bean id="myAspect" class="com.fengquanwei.hello.spring.aop.xmlconfig.MyAspect"/>
+
+    <!--AOP 配置-->
+    <aop:config>
+        <!--切面-->
+        <aop:aspect ref="myAspect">
+            <!--切点（作用域在此切面之内，若要跨多个切面使用，将切点配置在 aop:config 元素下即可）-->
+            <aop:pointcut id="pointcutA"
+                          expression="execution(* com.fengquanwei.hello.spring.aop.xmlconfig.InterfaceA.methodA())"/>
+
+            <!--前置通知-->
+            <aop:before pointcut-ref="pointcutA" method="before"/>
+            <!--后置通知-->
+            <aop:after pointcut-ref="pointcutA" method="after"/>
+            <!--返回通知-->
+            <aop:after-returning pointcut-ref="pointcutA" method="afterReturning"/>
+            <!--异常通知-->
+            <aop:after-throwing pointcut-ref="pointcutA" method="afterThrowing"/>
+
+            <!--环绕通知-->
+            <aop:around pointcut="execution(* com.fengquanwei.hello.spring.aop.xmlconfig.InterfaceB.methodB())"
+                        method="around"/>
+
+            <!--为通知传递参数（此处使用 and 而非 &&，因为在 XML 中 & 是解析实体的开始）-->
+            <aop:before
+                    pointcut="execution(* com.fengquanwei.hello.spring.aop.xmlconfig.InterfaceC.methodC(String)) and args(param)"
+                    method="beforeWithParam"/>
+
+            <!--通过切面引入新的接口【Option1:1】-->
+            <aop:declare-parents types-matching="com.fengquanwei.hello.spring.aop.xmlconfig.InterfaceA+"
+                                 implement-interface="com.fengquanwei.hello.spring.aop.xmlconfig.InterfaceD"
+                                 delegate-ref="implementD"/>
+            <!--通过切面引入新的接口【Option1:2】-->
+            <!--<aop:declare-parents types-matching="com.fengquanwei.hello.spring.aop.xmlconfig.InterfaceA+"-->
+            <!--implement-interface="com.fengquanwei.hello.spring.aop.xmlconfig.InterfaceD"-->
+            <!--default-impl="com.fengquanwei.hello.spring.aop.xmlconfig.ImplementD"/>-->
+        </aop:aspect>
+    </aop:config>
+
+</beans>
