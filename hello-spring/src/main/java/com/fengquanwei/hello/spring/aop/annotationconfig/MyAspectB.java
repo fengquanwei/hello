@@ -39,17 +39,19 @@ public class MyAspectB {
             Object result = pjp.proceed();
             System.out.println("MyAspectB.around() result: " + result);
         } catch (Throwable throwable) {
-            throwable.printStackTrace();
+            System.out.println("MyAspectB.around() throw");
         }
 
         System.out.println("MyAspectB.around() after");
     }
 
+    // 定义返回通知
     @AfterReturning("myPointcutWithParam(paramA)")
     public void afterReturning(String paramA) {
         System.out.println("MyAspectB.afterReturning(" + paramA + ")");
     }
 
+    // 定义异常通知
     @AfterThrowing("myPointcut()")
     public void afterThrowing() {
         System.out.println("MyAspectB.afterThrowing()");
