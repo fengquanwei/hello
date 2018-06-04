@@ -16,7 +16,25 @@
     <url>https://github.com/fengquanwei</url>
 
     <dependencies>
-        <!--spring-->
+        <!--Servlet-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <!--JSP-->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--JSTL-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--Spring-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -62,10 +80,20 @@
             <artifactId>spring-test</artifactId>
         </dependency>
 
-        <!--junit-->
+        <!--JUnit-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+
+        <!--Bean Validation-->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
         </dependency>
     </dependencies>
 
