@@ -6,7 +6,7 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
- * 根应用上下文配置
+ * Spring 应用上下文
  *
  * @author fengquanwei
  * @create 2018/6/4 11:52

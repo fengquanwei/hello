@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
- * Spring 应用上下文配置
+ * Spring MVC 应用上下文
  *
  * @author fengquanwei
  * @create 2018/6/4 11:52
