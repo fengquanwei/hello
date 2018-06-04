@@ -3,11 +3,13 @@ package com.fengquanwei.hello.spring.mvc.controller;
 import com.fengquanwei.hello.spring.mvc.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,6 +73,18 @@ public class HomeController {
     public String info(@PathVariable String name, Model model) {
         model.addAttribute(name);
         return "info";
+    }
+
+    // 校验表单（无法使用 MockMvc 测试，可以配置 form.jsp 的提交地址 formaction="validate" 进行测试）
+    @RequestMapping(value = "/validate", method = RequestMethod.POST)
+    public String validateForm(@Valid User user, Errors errors) {
+        if(errors.hasErrors()){
+            System.out.println("Invalid parameter, please submit again");
+            return "form";
+        }
+
+        System.out.println("HomeController.submitForm(" + user + ")");
+        return "redirect:/info/" + user.getName(); // 重定向防止重复提交
     }
 
     // ==================== 辅助方法 ====================
