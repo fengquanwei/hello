@@ -3,6 +3,7 @@ package com.fengquanwei.hello.spring.mvc.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration;
 
 /**
@@ -45,7 +46,18 @@ public class MyDispatcherServletInitializer extends AbstractAnnotationConfigDisp
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
 //        registration.setLoadOnStartup(1);
 //        registration.setInitParameter("name","Lask");
-        super.customizeRegistration(registration);
+
+        // 上传文件的临时目录
+        String location = "/opt/tmp"; // 临时目录
+        // 上传文件的最大字节数，默认没有限制
+        int maxFileSize = 2097152; // 文件大小不超过 2MB
+        // 整个 multipart 的最大字节数，默认没有限制
+        int maxRequestSize = 4194304; // 整个请求大小不超过 4MB
+        // 上传文件大小达到多少字节时将文件写入到临时目录，默认是 0，表示所有上传的文件都写入磁盘中
+        int fileSizeThreshold = 0; // 所有的文件都要写入到磁盘中
+
+        // multipart 配置
+        registration.setMultipartConfig(new MultipartConfigElement(location, maxFileSize, maxRequestSize, fileSizeThreshold));
     }
 
     /**
