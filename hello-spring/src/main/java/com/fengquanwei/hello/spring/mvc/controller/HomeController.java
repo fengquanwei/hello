@@ -71,14 +71,14 @@ public class HomeController {
     // 基本信息
     @RequestMapping(value = "/info/{name}", method = RequestMethod.GET)
     public String info(@PathVariable String name, Model model) {
-        model.addAttribute(name);
+        model.addAttribute("user", name);
         return "info";
     }
 
     // 校验表单（无法使用 MockMvc 测试，可以配置 form.jsp 的提交地址 formaction="validate" 进行测试）
     @RequestMapping(value = "/validate", method = RequestMethod.POST)
     public String validateForm(@Valid User user, Errors errors) {
-        if(errors.hasErrors()){
+        if (errors.hasErrors()) {
             System.out.println("Invalid parameter, please submit again");
             return "form";
         }

@@ -26,7 +26,7 @@ public class ExceptionController {
             throw new MyNotFoundException();
         }
 
-        model.addAttribute(name);
+        model.addAttribute("user", name);
         return "info";
     }
 
@@ -39,7 +39,7 @@ public class ExceptionController {
             throw new MyAdviceException();
         }
 
-        model.addAttribute(name);
+        model.addAttribute("user", name);
         return "info";
     }
 

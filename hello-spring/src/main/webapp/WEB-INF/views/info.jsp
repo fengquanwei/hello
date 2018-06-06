@@ -5,7 +5,8 @@
 </head>
 <body>
 
-User: ${name}
+User: ${user}
+Name: ${name}
 
 </body>
 </html>
