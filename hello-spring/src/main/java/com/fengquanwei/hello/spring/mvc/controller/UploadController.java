@@ -18,6 +18,7 @@ import java.io.IOException;
  * @create 2018/6/5 10:17
  **/
 @Controller
+@RequestMapping("/upload")
 public class UploadController {
     // 显示上传页面
     @RequestMapping(value = "/upload", method = RequestMethod.GET)
