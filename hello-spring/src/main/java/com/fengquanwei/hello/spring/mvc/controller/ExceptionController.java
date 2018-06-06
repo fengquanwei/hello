@@ -1,5 +1,6 @@
 package com.fengquanwei.hello.spring.mvc.controller;
 
+import com.fengquanwei.hello.spring.mvc.exception.MyAdviceException;
 import com.fengquanwei.hello.spring.mvc.exception.MyDuplicateException;
 import com.fengquanwei.hello.spring.mvc.exception.MyNotFoundException;
 import org.springframework.stereotype.Controller;
@@ -34,13 +35,15 @@ public class ExceptionController {
     public String handle(@PathVariable String name, Model model) {
         if ("Lask".equals(name)) {
             throw new MyDuplicateException();
+        } else if ("Advice".equals(name)) {
+            throw new MyAdviceException();
         }
 
         model.addAttribute(name);
         return "info";
     }
 
-    // 异常处理器（只能处理本控制器中的所有指定异常，想对所有控制器指定异常统一处理请使用控制器通知）
+    // 异常处理器（只能处理本控制器中的所有指定异常，想对所有控制器指定异常统一处理请使用控制器通知，或者使用继承将异常处理放在基类中）
     @ExceptionHandler(MyDuplicateException.class)
     public String handleMyDuplicateException() {
         return "error";
