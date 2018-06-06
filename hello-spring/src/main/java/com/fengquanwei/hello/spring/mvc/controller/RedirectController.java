@@ -1,11 +1,13 @@
 package com.fengquanwei.hello.spring.mvc.controller;
 
+import com.fengquanwei.hello.spring.mvc.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * 跨重定向请求传递数据
@@ -81,6 +83,22 @@ public class RedirectController {
     @RequestMapping(value = "/path/{name}", method = RequestMethod.GET)
     public String path(@PathVariable String name, Model model) {
         model.addAttribute("user", name);
+        return "info";
+    }
+
+    // http://localhost:8081/redirect/redirectWithFlash?name=Lask
+    // Flash 属性。在重定向之前所有的 flash 属性都会复制到会话中。在重定向之后，存在会话中的 flash 属性会被取出转移到模型之中
+    @RequestMapping(value = "/redirectWithFlash", method = RequestMethod.GET)
+    public String redirectWithFlash(@RequestParam String name, RedirectAttributes model) {
+        System.out.println("RedirectController.redirectWithFlash(" + name + ")");
+        model.addFlashAttribute("user", new User(name));
+        model.addFlashAttribute("name", name);
+        return "redirect:/redirect/flash";
+    }
+
+    @RequestMapping(value = "/flash", method = RequestMethod.GET)
+    public String flash(Model model) {
+        System.out.println("RedirectController.flash(" + model + ")");
         return "info";
     }
 }
