@@ -48,7 +48,7 @@ public class RedirectController {
     @RequestMapping(value = "/redirect2param", method = RequestMethod.GET)
     public String redirect2param(@RequestParam String name, Model model) {
         System.out.println("RedirectController.redirect2param(" + name + ")");
-        model.addAttribute("name", name); // 不是同一个请求啦，已经没有 name 参数了，所以要透传过去
+        model.addAttribute("name", name); // 不是同一个请求啦，已经没有 name 参数了，所以要透传过去（作为查询参数拼接到 URL 后面）
         return "redirect:/redirect/param";
     }
 
@@ -61,6 +61,15 @@ public class RedirectController {
     public String redirect2path(@RequestParam String name) {
         System.out.println("RedirectController.redirect2path(" + name + ")");
         return "redirect:/redirect/path/" + name;
+    }
+
+    // http://localhost:8081/redirect/placeholder?name=Lask
+    // 使用占位符（占位符内的特殊字符会自动转义）
+    @RequestMapping(value = "/placeholder", method = RequestMethod.GET)
+    public String placeholder(@RequestParam String name, Model model) {
+        System.out.println("RedirectController.placeholder(" + name + ")");
+        model.addAttribute("name", name);
+        return "redirect:/redirect/path/{name}";
     }
 
     @RequestMapping(value = "/param", method = RequestMethod.GET)
