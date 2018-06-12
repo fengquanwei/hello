@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.data.datasource;
+package com.fengquanwei.hello.spring.data.config;
 
 import com.fengquanwei.hello.spring.data.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
