@@ -27,28 +27,35 @@ public class Client {
     UserRepository userRepository;
 
     @Test
-    public void test() {
+    public void testInsert() {
         // 插入
-        User user = new User(2, "Lily");
+        User user = new User(1, "Lask");
 
         int insert1 = userRepository.insertUser(user);
         System.out.println("insert1: " + insert1);
 
-        // 修改
-        user.setName("Lucy");
-
-        int update = userRepository.updateUser(user);
-        System.out.println("update: " + update);
-
-        // 查询
-        User u = userRepository.selectOneUser(1);
-        System.out.println("select: " + u);
-
         // 命名参数
         Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("id", 3);
-        paramMap.put("name", "Lask");
+        paramMap.put("id", 2);
+        paramMap.put("name", "Lynn");
         int insert2 = userRepository.insertUser(paramMap);
         System.out.println("insert2: " + insert2);
     }
+
+    @Test
+    public void testUpdate() {
+        // 修改
+        User user = new User(2, "Lily");
+
+        int update = userRepository.updateUser(user);
+        System.out.println("update: " + update);
+    }
+
+    @Test
+    public void testSelect() {
+        // 查询
+        User user = userRepository.selectOneUser(1);
+        System.out.println("select: " + user);
+    }
+
 }
