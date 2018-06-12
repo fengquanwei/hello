@@ -1,6 +1,6 @@
-package com.fengquanwei.hello.spring.data.repository;
+package com.fengquanwei.hello.spring.data.spring;
 
-import com.fengquanwei.hello.spring.data.model.User;
+import com.fengquanwei.hello.spring.data.spring.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;

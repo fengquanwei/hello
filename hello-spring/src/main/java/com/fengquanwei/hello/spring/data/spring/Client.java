@@ -1,7 +1,5 @@
-package com.fengquanwei.hello.spring.data.config;
+package com.fengquanwei.hello.spring.data.spring;
 
-import com.fengquanwei.hello.spring.data.model.User;
-import com.fengquanwei.hello.spring.data.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 配置数据源
+ * DB 配置
  *
  * @author fengquanwei
  * @create 2017/12/29 18:05
@@ -22,13 +20,15 @@ import java.util.Map;
 @ContextConfiguration(classes = Config.class)
 @ActiveProfiles("datasource-dbcp")
 public class Client {
-
     @Autowired
     UserRepository userRepository;
 
+    /**
+     * 增
+     */
     @Test
     public void testInsert() {
-        // 插入
+        // 索引参数
         User user = new User(1, "Lask");
 
         int insert1 = userRepository.insertUser(user);
@@ -42,18 +42,22 @@ public class Client {
         System.out.println("insert2: " + insert2);
     }
 
+    /**
+     * 改
+     */
     @Test
     public void testUpdate() {
-        // 修改
         User user = new User(2, "Lily");
 
         int update = userRepository.updateUser(user);
         System.out.println("update: " + update);
     }
 
+    /**
+     * 查
+     */
     @Test
     public void testSelect() {
-        // 查询
         User user = userRepository.selectOneUser(1);
         System.out.println("select: " + user);
     }

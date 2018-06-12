@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.data.model;
+package com.fengquanwei.hello.spring.data.spring;
 
 /**
  * User
