@@ -21,7 +21,7 @@ import javax.sql.DataSource;
  * @create 2017/12/29 18:05
  **/
 @Configuration
-@ComponentScan("com.fengquanwei.hello.spring.data")
+@ComponentScan
 public class Config {
     // ==================== 配置数据源 ====================
 
