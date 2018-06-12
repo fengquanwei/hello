@@ -1,6 +1,7 @@
 package com.fengquanwei.hello.spring.data.config;
 
 import com.fengquanwei.hello.spring.data.model.User;
+import com.fengquanwei.hello.spring.data.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import java.util.Map;
  **/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Config.class)
-@ActiveProfiles("config-dbcp")
+@ActiveProfiles("datasource-dbcp")
 public class Client {
 
     @Autowired
