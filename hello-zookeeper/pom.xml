@@ -16,7 +16,7 @@
     <url>https://github.com/fengquanwei</url>
 
     <dependencies>
-        <!--zookeeper zkclient-->
+        <!--zkclient-->
         <dependency>
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
@@ -28,7 +28,7 @@
             </exclusions>
         </dependency>
 
-        <!--zookeeper curator-->
+        <!--curator-->
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>

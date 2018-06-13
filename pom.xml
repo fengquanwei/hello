@@ -13,6 +13,7 @@
         <module>hello-zookeeper</module>
         <module>hello-spring</module>
         <module>hello-util</module>
+        <module>hello-hibernate</module>
     </modules>
 
     <properties>
@@ -20,23 +21,23 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
-        <jsp-api.version>2.2</jsp-api.version>
+        <servlet.version>3.0.1</servlet.version>
+        <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
 
+        <validation.version>1.1.0.Final</validation.version>
+
         <spring.version>4.2.0.RELEASE</spring.version>
+        <hibernate.version>5.1.2.Final</hibernate.version>
 
-        <validation-api.version>1.1.0.Final</validation-api.version>
-        <hibernate-validator.version>5.1.2.Final</hibernate-validator.version>
+        <dbcp.version>1.2.2</dbcp.version>
+        <mysql.version>5.1.33</mysql.version>
 
-        <commons-dbcp.version>1.2.2</commons-dbcp.version>
-        <mysql-connector-java.version>5.1.33</mysql-connector-java.version>
-
-        <kafka-clients.version>0.10.0.0</kafka-clients.version>
+        <kafka.version>0.10.0.0</kafka.version>
 
         <zookeeper.version>3.3.1</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
-        <curator-framework.version>2.4.2</curator-framework.version>
+        <curator.version>2.4.2</curator.version>
 
         <junit.version>4.11</junit.version>
     </properties>
@@ -47,19 +48,26 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>${javax.servlet-api.version}</version>
+                <version>${servlet.version}</version>
             </dependency>
             <!--jsp-->
             <dependency>
                 <groupId>javax.servlet.jsp</groupId>
                 <artifactId>jsp-api</artifactId>
-                <version>${jsp-api.version}</version>
+                <version>${jsp.version}</version>
             </dependency>
             <!--jstl-->
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
                 <version>${jstl.version}</version>
+            </dependency>
+
+            <!--validation-->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${validation.version}</version>
             </dependency>
 
             <!--spring-->
@@ -119,68 +127,68 @@
                 <version>${spring.version}</version>
             </dependency>
 
-            <!--validation-->
+            <!--hibernate-->
             <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>${validation-api.version}</version>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>${hibernate-validator.version}</version>
+                <version>${hibernate.version}</version>
             </dependency>
 
             <!--dbcp-->
             <dependency>
                 <groupId>commons-dbcp</groupId>
                 <artifactId>commons-dbcp</artifactId>
-                <version>${commons-dbcp.version}</version>
+                <version>${dbcp.version}</version>
             </dependency>
 
             <!-- mysql -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector-java.version}</version>
+                <version>${mysql.version}</version>
             </dependency>
 
             <!--kafka-->
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
-                <version>${kafka-clients.version}</version>
+                <version>${kafka.version}</version>
             </dependency>
 
-            <!--zookeeper client-->
+            <!--zookeeper-->
             <dependency>
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>zookeeper</artifactId>
                 <version>${zookeeper.version}</version>
             </dependency>
 
-            <!--zookeeper zkclient-->
+            <!--zkclient-->
             <dependency>
                 <groupId>com.github.sgroschupf</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
             </dependency>
 
-            <!--zookeeper curator-->
+            <!--curator-->
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
-                <version>${curator-framework.version}</version>
+                <version>${curator.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-recipes</artifactId>
-                <version>${curator-framework.version}</version>
+                <version>${curator.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-test</artifactId>
-                <version>${curator-framework.version}</version>
+                <version>${curator.version}</version>
             </dependency>
 
             <!--junit-->
