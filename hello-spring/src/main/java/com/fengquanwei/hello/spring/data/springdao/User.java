@@ -4,38 +4,63 @@ package com.fengquanwei.hello.spring.data.springdao;
  * User
  *
  * @author fengquanwei
- * @create 2018/6/12 17:55
+ * @create 2018/6/13 11:12
  **/
 public class User {
-    private Integer id;
-    private String name;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private int salary;
 
-    public User(Integer id, String name) {
-        this.id = id;
-        this.name = name;
+    public User() {
     }
 
-    public Integer getId() {
+    public User(int id, String firstName, String lastName, int salary) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.salary = salary;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String first_name) {
+        this.firstName = first_name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String last_name) {
+        this.lastName = last_name;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salary=" + salary +
                 '}';
     }
 }

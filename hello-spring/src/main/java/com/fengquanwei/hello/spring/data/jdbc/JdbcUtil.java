@@ -121,13 +121,13 @@ public class JdbcUtil {
         jdbcUtil.getConnection();
 
         try {
-            int update = jdbcUtil.update("update a set score = ? where id = ?", new ArrayList() {{
-                add("777");
-                add("3");
+            int update = jdbcUtil.update("update user set salary = ? where id = ?", new ArrayList() {{
+                add("666");
+                add("1");
             }});
             System.out.println("update: " + update);
 
-            List<Map<String, Object>> result = jdbcUtil.query("select * from a where id > ?", new ArrayList() {{
+            List<Map<String, Object>> result = jdbcUtil.query("select * from user where id > ?", new ArrayList() {{
                 add("1");
             }});
             for (Map<String, Object> map : result) {
