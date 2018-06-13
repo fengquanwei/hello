@@ -1,18 +1,18 @@
-package com.fengquanwei.hello.hibernate.annotationconfig;
+package com.fengquanwei.hello.hibernate;
 
 import javax.persistence.*;
 
 /**
- * Employee
+ * User
  *
  * @author fengquanwei
  * @create 2018/6/13 11:12
  **/
 @Entity
-@Table(name = "EMPLOYEE")
-public class Employee {
+@Table(name = "user")
+public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -25,7 +25,13 @@ public class Employee {
     @Column(name = "salary")
     private int salary;
 
-    public Employee() {
+    public User() {
+    }
+
+    public User(String firstName, String lastName, int salary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.salary = salary;
     }
 
     public int getId() {

@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.hibernate.xmlconfig;
+package com.fengquanwei.hello.hibernate;
 
 /**
  * Employee

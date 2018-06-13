@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.hibernate.xmlconfig;
+package com.fengquanwei.hello.hibernate;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,13 +17,15 @@ import java.util.List;
  * @author fengquanwei
  * @create 2018/6/13 14:44
  **/
-public class Client {
+public class Client4Annotation {
     private static SessionFactory sessionFactory;
 
     @Before
     public void before() {
         try {
-            sessionFactory = new Configuration().configure().buildSessionFactory();
+            sessionFactory = new Configuration().configure().
+                    addAnnotatedClass(User.class).
+                    buildSessionFactory();
         } catch (Throwable throwable) {
             System.err.println("Failed to create sessionFactory object" + throwable);
             throw new ExceptionInInitializerError(throwable);
@@ -38,7 +40,7 @@ public class Client {
         try {
             transaction = session.beginTransaction();
 
-            Employee employee = new Employee("Zara", "Ali", 1000);
+            User employee = new User("Zara", "Ali", 1000);
             employeeId = (Integer) session.save(employee);
 
             transaction.commit();
@@ -62,7 +64,7 @@ public class Client {
         try {
             transaction = session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, employeeId);
+            User employee = session.get(User.class, employeeId);
             session.delete(employee);
 
             transaction.commit();
@@ -82,11 +84,11 @@ public class Client {
     public void testUpdate() {
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
-        Integer employeeId = 2;
+        Integer employeeId = 1;
         try {
             transaction = session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, employeeId);
+            User employee = session.get(User.class, employeeId);
             employee.setSalary(666);
             session.update(employee);
 
@@ -110,9 +112,9 @@ public class Client {
         try {
             transaction = session.beginTransaction();
 
-            List employees = session.createQuery("FROM Employee").list();
+            List employees = session.createQuery("FROM User").list();
             for (Iterator iterator = employees.iterator(); iterator.hasNext(); ) {
-                Employee employee = (Employee) iterator.next();
+                User employee = (User) iterator.next();
                 System.out.print("First Name: " + employee.getFirstName());
                 System.out.print("  Last Name: " + employee.getLastName());
                 System.out.println("  Salary: " + employee.getSalary());
