@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.data.springdao;
+package com.fengquanwei.hello.spring.data.jdbc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.data.springdao;
+package com.fengquanwei.hello.spring.data.jdbc;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
