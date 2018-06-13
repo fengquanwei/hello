@@ -31,7 +31,7 @@ public class Client {
         // 索引参数
         User user = new User(11, "Lask", "Feng", 1000);
 
-        int insert1 = userRepository.insertUser(user);
+        int insert1 = userRepository.insert(user);
         System.out.println("insert1: " + insert1);
 
         // 命名参数
@@ -40,7 +40,7 @@ public class Client {
         paramMap.put("firstName", "Lynn");
         paramMap.put("lastName", "Li");
         paramMap.put("salary", 1000);
-        int insert2 = userRepository.insertUser(paramMap);
+        int insert2 = userRepository.insert(paramMap);
         System.out.println("insert2: " + insert2);
     }
 
@@ -51,7 +51,7 @@ public class Client {
     public void testUpdate() {
         User user = new User(22, "Lily", "Liu", 666);
 
-        int update = userRepository.updateUser(user);
+        int update = userRepository.update(user);
         System.out.println("update: " + update);
     }
 
@@ -60,7 +60,7 @@ public class Client {
      */
     @Test
     public void testSelect() {
-        User user = userRepository.selectOneUser(11);
+        User user = userRepository.selectOne(11);
         System.out.println("select: " + user);
     }
 

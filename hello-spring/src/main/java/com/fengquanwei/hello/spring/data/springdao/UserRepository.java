@@ -24,7 +24,7 @@ public class UserRepository {
     @Autowired
     NamedParameterJdbcOperations namedParameterJdbcOperations;
 
-    public int insertUser(User user) {
+    public int insert(User user) {
         return jdbcOperations.update("insert into user values (?, ?, ?, ?)",
                 user.getId(),
                 user.getFirstName(),
@@ -32,11 +32,11 @@ public class UserRepository {
                 user.getSalary());
     }
 
-    public int insertUser(Map<String, Object> paramMap) {
+    public int insert(Map<String, Object> paramMap) {
         return namedParameterJdbcOperations.update("insert into user values (:id, :firstName, :lastName, :salary)", paramMap);
     }
 
-    public int updateUser(User user) {
+    public int update(User user) {
         return jdbcOperations.update("update user set id = ?, first_name = ?, last_name = ?, salary = ? where id = ?",
                 user.getId(),
                 user.getFirstName(),
@@ -45,7 +45,7 @@ public class UserRepository {
                 user.getId());
     }
 
-    public User selectOneUser(Integer id) {
+    public User selectOne(Integer id) {
         return jdbcOperations.queryForObject("select * from user where id = ? limit 1", new RowMapper<User>() {
             @Override
             public User mapRow(ResultSet resultSet, int i) throws SQLException {
