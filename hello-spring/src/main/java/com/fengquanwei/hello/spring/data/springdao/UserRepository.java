@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.data.spring;
+package com.fengquanwei.hello.spring.data.springdao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
