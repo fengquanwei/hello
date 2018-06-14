@@ -18,7 +18,7 @@ import java.util.List;
  * @create 2018/6/13 14:44
  **/
 public class Client4Annotation {
-    private static SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     @Before
     public void before() {
