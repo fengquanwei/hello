@@ -26,6 +26,8 @@
         <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
 
+        <javaee.version>7.0</javaee.version>
+
         <validation.version>1.1.0.Final</validation.version>
 
         <spring.version>4.2.0.RELEASE</spring.version>
@@ -63,6 +65,13 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
                 <version>${jstl.version}</version>
+            </dependency>
+
+            <!--javaee-->
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${javaee.version}</version>
             </dependency>
 
             <!--validation-->

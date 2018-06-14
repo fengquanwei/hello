@@ -15,4 +15,11 @@
     <name>hello-javaee Maven Webapp</name>
     <url>https://github.com/fengquanwei</url>
 
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
