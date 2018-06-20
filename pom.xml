@@ -31,7 +31,7 @@
         <validation.version>1.1.0.Final</validation.version>
 
         <spring.version>4.2.0.RELEASE</spring.version>
-        <spring-data-jpa.version>1.11.9.RELEASE</spring-data-jpa.version>
+        <springdata.version>1.9.6.RELEASE</springdata.version>
         <hibernate.version>5.1.2.Final</hibernate.version>
 
         <dbcp.version>1.2.2</dbcp.version>
@@ -146,7 +146,19 @@
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-jpa</artifactId>
-                <version>${spring-data-jpa.version}</version>
+                <version>${springdata.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-mongodb</artifactId>
+                <version>${springdata.version}</version>
+            </dependency>
+
+            <!--Spring Data MongoDB 需要这个版本，但是 Spring Data JPA 不需要这个版本-->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-commons</artifactId>
+                <version>1.13.6.RELEASE</version>
             </dependency>
 
             <!--hibernate-->
