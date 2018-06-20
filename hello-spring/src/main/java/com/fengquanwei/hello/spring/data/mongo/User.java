@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.data.springdatamongo;
+package com.fengquanwei.hello.spring.data.mongo;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

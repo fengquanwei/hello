@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.data.springdatamongo;
+package com.fengquanwei.hello.spring.data.mongo;
 
 /**
  * Contact
