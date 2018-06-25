@@ -15,6 +15,7 @@
         <module>hello-util</module>
         <module>hello-hibernate</module>
         <module>hello-javaee</module>
+        <module>hello-redis</module>
     </modules>
 
     <properties>
@@ -45,6 +46,8 @@
 
         <junit.version>4.11</junit.version>
         <mail.version>1.4.7</mail.version>
+
+        <redis.version>2.9.0</redis.version>
     </properties>
 
     <dependencyManagement>
@@ -243,6 +246,13 @@
                 <groupId>javax.mail</groupId>
                 <artifactId>mail</artifactId>
                 <version>${mail.version}</version>
+            </dependency>
+
+            <!--jedis-->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${redis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
