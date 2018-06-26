@@ -22,33 +22,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
         <servlet.version>3.0.1</servlet.version>
         <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
-
         <javaee.version>7.0</javaee.version>
-
         <validation.version>1.1.0.Final</validation.version>
-
         <spring.version>4.2.0.RELEASE</spring.version>
         <springdata.version>1.9.6.RELEASE</springdata.version>
         <springdata.redis.version>1.8.4.RELEASE</springdata.redis.version>
         <hibernate.version>5.1.2.Final</hibernate.version>
-
         <dbcp.version>1.2.2</dbcp.version>
         <mysql.version>5.1.33</mysql.version>
-
         <kafka.version>0.10.0.0</kafka.version>
-
         <zookeeper.version>3.3.1</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
         <curator.version>2.4.2</curator.version>
-
-        <junit.version>4.11</junit.version>
         <mail.version>1.4.7</mail.version>
-
         <redis.version>2.9.0</redis.version>
+        <ehcache.version>2.8.2</ehcache.version>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -240,13 +232,6 @@
                 <version>${curator.version}</version>
             </dependency>
 
-            <!--junit-->
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-            </dependency>
-
             <!--mail-->
             <dependency>
                 <groupId>javax.mail</groupId>
@@ -259,6 +244,20 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${redis.version}</version>
+            </dependency>
+
+            <!--ehcache-->
+            <dependency>
+                <groupId>net.sf.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${ehcache.version}</version>
+            </dependency>
+
+            <!--junit-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
