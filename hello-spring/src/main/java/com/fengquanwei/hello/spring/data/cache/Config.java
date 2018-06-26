@@ -35,27 +35,27 @@ import java.util.Properties;
 @ComponentScan
 @EnableCaching // 启动注解驱动的缓存
 public class Config {
-    // 配置缓存管理器：使用 ConcurrentHashMap 缓存
+//    // 配置缓存管理器：使用 ConcurrentHashMap 缓存
+//
+//    @Bean
+//    public CacheManager cacheManager() {
+//        return new ConcurrentMapCacheManager();
+//    }
+
+    // 配置缓存管理器：使用 EhCache 缓存
 
     @Bean
-    public CacheManager cacheManager() {
-        return new ConcurrentMapCacheManager();
+    public EhCacheManagerFactoryBean ehCacheManagerFactoryBean() {
+        EhCacheManagerFactoryBean ehCacheManagerFactoryBean = new EhCacheManagerFactoryBean();
+        ehCacheManagerFactoryBean.setConfigLocation(new ClassPathResource("spring-data-ehcache.xml"));
+        return ehCacheManagerFactoryBean;
     }
 
-//    // 配置缓存管理器：使用 EhCache 缓存
-//
-//    @Bean
-//    public EhCacheManagerFactoryBean ehCacheManagerFactoryBean() {
-//        EhCacheManagerFactoryBean ehCacheManagerFactoryBean = new EhCacheManagerFactoryBean();
-//        ehCacheManagerFactoryBean.setConfigLocation(new ClassPathResource("com/fengquanwei/hello/spring/data/cache/ehcache.xml"));
-//        return ehCacheManagerFactoryBean;
-//    }
-//
-//    @Bean
-//    public EhCacheCacheManager ehcacheManager(net.sf.ehcache.CacheManager cacheManager) {
-//        return new EhCacheCacheManager(cacheManager);
-//    }
-//
+    @Bean
+    public EhCacheCacheManager ehcacheManager(net.sf.ehcache.CacheManager cacheManager) {
+        return new EhCacheCacheManager(cacheManager);
+    }
+
 //    // 配置缓存管理器：使用 Redis 缓存
 //
 //    @Bean
