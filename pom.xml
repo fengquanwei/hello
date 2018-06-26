@@ -33,6 +33,7 @@
 
         <spring.version>4.2.0.RELEASE</spring.version>
         <springdata.version>1.9.6.RELEASE</springdata.version>
+        <springdata.redis.version>1.8.4.RELEASE</springdata.redis.version>
         <hibernate.version>5.1.2.Final</hibernate.version>
 
         <dbcp.version>1.2.2</dbcp.version>
@@ -155,6 +156,11 @@
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb</artifactId>
                 <version>${springdata.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>${springdata.redis.version}</version>
             </dependency>
 
             <!--Spring Data MongoDB 需要这个版本，但是 Spring Data JPA 不需要这个版本-->
