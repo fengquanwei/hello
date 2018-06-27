@@ -41,6 +41,7 @@ public class Client {
 
         userRepository.delete(user1);
         userRepository.delete(user2);
+        userRepository.delete(user3);
 
         User select8 = userRepository.select(insert1.getId());
 

@@ -24,9 +24,9 @@ public class Config {
     public DataSource dataSource() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/test");
-        dataSource.setUsername("");
-        dataSource.setPassword("");
+        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/test");
+        dataSource.setUsername("root");
+        dataSource.setPassword("root");
         dataSource.setInitialSize(3);
         dataSource.setMaxActive(10);
 
@@ -40,7 +40,7 @@ public class Config {
         sessionFactoryBean.setPackagesToScan("com.fengquanwei.hello.spring.data.hibernate");
 
         Properties properties = new Properties();
-        properties.setProperty("dialect", "org.hibernate.dialect.MySQLDialect");
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         sessionFactoryBean.setHibernateProperties(properties);
 
         return sessionFactoryBean;
