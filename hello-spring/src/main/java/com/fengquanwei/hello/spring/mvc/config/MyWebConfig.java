@@ -26,7 +26,7 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        // 配置 DispatcherServlet：将对静态资源的请求转发到 Servlet 容器中默认的 Servlet 上，而不是 DispatcherServlet 本身来处理
+        // 将对静态资源的请求转发到 Servlet 容器中默认的 DefaultServlet 上，而不是 DispatcherServlet 本身来处理
         configurer.enable();
     }
 
