@@ -3,7 +3,7 @@ package com.fengquanwei.hello.javase.jvm.reference;
 import java.lang.ref.SoftReference;
 
 /**
- * SoftRef
+ * 软引用
  * -Xmx10m
  * 当内存不足时软引用对象被回收
  *

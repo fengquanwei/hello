@@ -30,9 +30,9 @@ public class CanReliveObj {
         Thread.sleep(1000);
 
         if (obj == null) {
-            System.out.println("obj is null");
+            System.out.println("traceCanReliveObj is null");
         } else {
-            System.out.println("obj live");
+            System.out.println("traceCanReliveObj live");
         }
 
         System.out.println("The 2nd gc");
@@ -41,9 +41,9 @@ public class CanReliveObj {
         Thread.sleep(1000);
 
         if (obj == null) {
-            System.out.println("obj is null");
+            System.out.println("traceCanReliveObj is null");
         } else {
-            System.out.println("obj live");
+            System.out.println("traceCanReliveObj live");
         }
     }
 }

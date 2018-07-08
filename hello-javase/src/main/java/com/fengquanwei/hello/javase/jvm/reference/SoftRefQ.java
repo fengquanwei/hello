@@ -4,7 +4,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 
 /**
- * SoftRefQ
+ * 软引用与引用队列
  * -Xmx10m
  *
  * @author fengquanwei
