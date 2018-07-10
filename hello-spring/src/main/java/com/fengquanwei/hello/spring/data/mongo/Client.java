@@ -12,6 +12,8 @@ import java.util.List;
 
 /**
  * Client
+ * 启动 MongoDB：/opt/soft/mongodb-osx-x86_64-3.6.5/bin/mongod
+ * 测试之前加上 hello/pom.xml 中的 spring-data-commons
  *
  * @author fengquanwei
  * @create 2018/6/20 10:12

@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Spring Data Jpa
+ * 测试之前去掉 hello/pom.xml 中的 spring-data-commons
  *
  * @author fengquanwei
  * @create 2018/6/15 15:33

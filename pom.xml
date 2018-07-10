@@ -28,20 +28,30 @@
         <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
         <javaee.version>7.0</javaee.version>
-        <validation.version>1.1.0.Final</validation.version>
+
         <spring.version>4.2.0.RELEASE</spring.version>
-        <springdata.version>1.9.6.RELEASE</springdata.version>
-        <springdata.redis.version>1.8.4.RELEASE</springdata.redis.version>
+        <spring.data.version>1.9.6.RELEASE</spring.data.version>
+        <spring.data.redis.version>1.8.4.RELEASE</spring.data.redis.version>
+        <spring.data.commons.version>1.13.6.RELEASE</spring.data.commons.version>
+
         <hibernate.version>5.1.2.Final</hibernate.version>
-        <dbcp.version>1.2.2</dbcp.version>
+
         <mysql.version>5.1.33</mysql.version>
+        <dbcp.version>1.2.2</dbcp.version>
+
+        <ehcache.version>2.8.2</ehcache.version>
+
+        <redis.version>2.9.0</redis.version>
+
         <kafka.version>0.10.0.0</kafka.version>
+
         <zookeeper.version>3.3.1</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
         <curator.version>2.4.2</curator.version>
+
         <mail.version>1.4.7</mail.version>
-        <redis.version>2.9.0</redis.version>
-        <ehcache.version>2.8.2</ehcache.version>
+
+        <validation.version>1.1.0.Final</validation.version>
         <junit.version>4.11</junit.version>
     </properties>
 
@@ -65,19 +75,11 @@
                 <artifactId>jstl</artifactId>
                 <version>${jstl.version}</version>
             </dependency>
-
             <!--javaee-->
             <dependency>
                 <groupId>javax</groupId>
                 <artifactId>javaee-api</artifactId>
                 <version>${javaee.version}</version>
-            </dependency>
-
-            <!--validation-->
-            <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>${validation.version}</version>
             </dependency>
 
             <!--spring-->
@@ -93,32 +95,7 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-orm</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-tx</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-jdbc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-aop</artifactId>
+                <artifactId>spring-context-support</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <dependency>
@@ -128,12 +105,37 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
                 <artifactId>spring-aspects</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <dependency>
@@ -141,27 +143,27 @@
                 <artifactId>spring-test</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+
+            <!--spring data-->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-jpa</artifactId>
-                <version>${springdata.version}</version>
+                <version>${spring.data.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb</artifactId>
-                <version>${springdata.version}</version>
+                <version>${spring.data.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-redis</artifactId>
-                <version>${springdata.redis.version}</version>
+                <version>${spring.data.redis.version}</version>
             </dependency>
-
-            <!--Spring Data MongoDB 需要这个版本，但是 Spring Data JPA 不需要这个版本-->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-commons</artifactId>
-                <version>1.13.6.RELEASE</version>
+                <version>${spring.data.commons.version}</version>
             </dependency>
 
             <!--hibernate-->
@@ -175,18 +177,10 @@
                 <artifactId>hibernate-entitymanager</artifactId>
                 <version>${hibernate.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>${hibernate.version}</version>
-            </dependency>
-
-            <!--dbcp-->
-            <dependency>
-                <groupId>commons-dbcp</groupId>
-                <artifactId>commons-dbcp</artifactId>
-                <version>${dbcp.version}</version>
             </dependency>
 
             <!-- mysql -->
@@ -194,6 +188,26 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
+            </dependency>
+            <!--dbcp-->
+            <dependency>
+                <groupId>commons-dbcp</groupId>
+                <artifactId>commons-dbcp</artifactId>
+                <version>${dbcp.version}</version>
+            </dependency>
+
+            <!--ehcache-->
+            <dependency>
+                <groupId>net.sf.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${ehcache.version}</version>
+            </dependency>
+
+            <!--redis-->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${redis.version}</version>
             </dependency>
 
             <!--kafka-->
@@ -241,18 +255,11 @@
                 <version>${mail.version}</version>
             </dependency>
 
-            <!--jedis-->
+            <!--validation-->
             <dependency>
-                <groupId>redis.clients</groupId>
-                <artifactId>jedis</artifactId>
-                <version>${redis.version}</version>
-            </dependency>
-
-            <!--ehcache-->
-            <dependency>
-                <groupId>net.sf.ehcache</groupId>
-                <artifactId>ehcache</artifactId>
-                <version>${ehcache.version}</version>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${validation.version}</version>
             </dependency>
 
             <!--junit-->
