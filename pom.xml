@@ -12,6 +12,8 @@
         <module>hello-javase</module>
         <module>hello-javaee</module>
         <module>hello-spring</module>
+        <module>hello-spring-mvc</module>
+        <module>hello-spring-security</module>
         <module>hello-hibernate</module>
         <module>hello-redis</module>
         <module>hello-kafka</module>
@@ -33,6 +35,7 @@
         <spring.data.version>1.9.6.RELEASE</spring.data.version>
         <spring.data.redis.version>1.8.4.RELEASE</spring.data.redis.version>
         <spring.data.commons.version>1.13.6.RELEASE</spring.data.commons.version>
+        <spring.security.version>3.2.0.RELEASE</spring.security.version>
 
         <hibernate.version>5.1.2.Final</hibernate.version>
 
@@ -164,6 +167,23 @@
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-commons</artifactId>
                 <version>${spring.data.commons.version}</version>
+            </dependency>
+
+            <!--spring security-->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring.security.version}</version>
             </dependency>
 
             <!--hibernate-->

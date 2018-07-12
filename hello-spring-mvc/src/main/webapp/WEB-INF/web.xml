@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+  <!-- ============================== 从 XML 文件中加载应用上下文 ============================== -->
+
+  <!--&lt;!&ndash;指定 Spring 应用上下文的配置文件&ndash;&gt;-->
+  <!--<context-param>-->
+  <!--<param-name>contextConfigLocation</param-name>-->
+  <!--<param-value>classpath:spring-mvc-rootconfig.xml</param-value>-->
+  <!--</context-param>-->
+
+  <!--&lt;!&ndash;注册 ContextLoaderListener&ndash;&gt;-->
+  <!--<listener>-->
+  <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+  <!--</listener>-->
+
+  <!--&lt;!&ndash;注册 DispatcherServlet&ndash;&gt;-->
+  <!--<servlet>-->
+  <!--<servlet-name>DispatcherServlet</servlet-name>-->
+  <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
+  <!--<init-param>-->
+  <!--&lt;!&ndash;DispatcherServlet 默认会根据 Servlet 的名字加载配置文件。也可以指定 Spring MVC 应用上下文的配置文件&ndash;&gt;-->
+  <!--<param-name>contextConfigLocation</param-name>-->
+  <!--<param-value>classpath:spring-mvc-webconfig.xml</param-value>-->
+  <!--</init-param>-->
+  <!--<load-on-startup>1</load-on-startup>-->
+
+  <!--&lt;!&ndash;multipart 配置&ndash;&gt;-->
+  <!--<multipart-config>-->
+  <!--<location>/tmp</location>-->
+  <!--<max-file-size>2097152</max-file-size>-->
+  <!--<max-request-size>4194304</max-request-size>-->
+  <!--<file-size-threshold>0</file-size-threshold>-->
+  <!--</multipart-config>-->
+  <!--</servlet>-->
+  <!--<servlet-mapping>-->
+  <!--<servlet-name>DispatcherServlet</servlet-name>-->
+  <!--<url-pattern>/</url-pattern>-->
+  <!--</servlet-mapping>-->
+
+  <!-- ============================== 从 Java Config 类中加载应用上下文 ============================== -->
+
+  <!--&lt;!&ndash;指定 Spring 应用上下文使用 Java Config&ndash;&gt;-->
+  <!--<context-param>-->
+  <!--<param-name>contextClass</param-name>-->
+  <!--<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>-->
+  <!--</context-param>-->
+
+  <!--&lt;!&ndash;指定 Spring 应用上下文的配置类&ndash;&gt;-->
+  <!--<context-param>-->
+  <!--<param-name>contextConfigLocation</param-name>-->
+  <!--<param-value>com.fengquanwei.hello.spring.mvc.config.MyRootConfig</param-value>-->
+  <!--</context-param>-->
+
+  <!--&lt;!&ndash;注册 ContextLoaderListener&ndash;&gt;-->
+  <!--<listener>-->
+  <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+  <!--</listener>-->
+
+  <!--&lt;!&ndash;注册 DispatcherServlet&ndash;&gt;-->
+  <!--<servlet>-->
+  <!--<servlet-name>DispatcherServlet</servlet-name>-->
+  <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
+  <!--&lt;!&ndash;指定 DispatcherServlet 使用 Java Config&ndash;&gt;-->
+  <!--<init-param>-->
+  <!--<param-name>contextClass</param-name>-->
+  <!--<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>-->
+  <!--</init-param>-->
+  <!--&lt;!&ndash;指定 Spring MVC 应用上下文的配置类&ndash;&gt;-->
+  <!--<init-param>-->
+  <!--<param-name>contextConfigLocation</param-name>-->
+  <!--<param-value>com.fengquanwei.hello.spring.mvc.config.MyWebConfig</param-value>-->
+  <!--</init-param>-->
+  <!--<load-on-startup>1</load-on-startup>-->
+  <!--&lt;!&ndash;multipart 配置&ndash;&gt;-->
+  <!--<multipart-config>-->
+  <!--<location>/tmp</location>-->
+  <!--<max-file-size>2097152</max-file-size>-->
+  <!--<max-request-size>4194304</max-request-size>-->
+  <!--<file-size-threshold>0</file-size-threshold>-->
+  <!--</multipart-config>-->
+  <!--</servlet>-->
+  <!--<servlet-mapping>-->
+  <!--<servlet-name>DispatcherServlet</servlet-name>-->
+  <!--<url-pattern>/</url-pattern>-->
+  <!--</servlet-mapping>-->
+
+</web-app>
