@@ -56,7 +56,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/nohttps").requiresInsecure() // 不需要 HTTPS，自动将请求重定向到 HTTP
                 .and()
 
-                .csrf().disable();// 禁用 CSRF 防护功能，默认开启，用于防止跨站请求，不建议禁用
+                .csrf().disable(); // 禁用 CSRF 防护功能，默认开启，用于防止跨站请求，不建议禁用
     }
 
     /**
