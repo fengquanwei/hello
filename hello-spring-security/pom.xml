@@ -33,6 +33,11 @@
             <artifactId>jstl</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!--javaee-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
 
         <!--spring-->
         <dependency>
