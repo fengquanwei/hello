@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.security.config;
+package com.fengquanwei.hello.spring.security.web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  **/
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.fengquanwei.hello.spring.security")
+@ComponentScan("com.fengquanwei.hello.spring.security.web")
 public class MyWebConfig extends WebMvcConfigurerAdapter {
     /**
      * 配置静态资源处理器
