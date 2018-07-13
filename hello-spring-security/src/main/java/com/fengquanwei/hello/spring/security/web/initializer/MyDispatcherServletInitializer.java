@@ -1,5 +1,6 @@
-package com.fengquanwei.hello.spring.security.web.config;
+package com.fengquanwei.hello.spring.security.web.initializer;
 
+import com.fengquanwei.hello.spring.security.web.config.MyWebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**

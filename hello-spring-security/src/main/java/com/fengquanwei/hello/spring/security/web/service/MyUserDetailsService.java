@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.security.web.config;
+package com.fengquanwei.hello.spring.security.web.service;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

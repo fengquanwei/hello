@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.security.web.config;
+package com.fengquanwei.hello.spring.security.web.initializer;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

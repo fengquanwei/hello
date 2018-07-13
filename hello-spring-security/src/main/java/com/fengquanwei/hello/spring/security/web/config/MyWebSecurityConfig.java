@@ -17,7 +17,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity // 启用 Web 安全性
 //@EnableWebMvcSecurity // 启用 Spring MVC 安全性
-public class MySecurityConfig extends WebSecurityConfigurerAdapter {
+public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * 配置 Spring Security 的 Filter 链
      */
