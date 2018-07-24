@@ -1,4 +1,4 @@
-package rmi;
+package com.fengquanwei.hello.javaee.rmi;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
