@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.rpc;
+package com.fengquanwei.hello.spring.rpc.rmi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
