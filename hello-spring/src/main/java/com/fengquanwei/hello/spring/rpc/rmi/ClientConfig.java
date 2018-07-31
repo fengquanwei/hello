@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.web.rpc.rmi;
+package com.fengquanwei.hello.spring.rpc.rmi;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
