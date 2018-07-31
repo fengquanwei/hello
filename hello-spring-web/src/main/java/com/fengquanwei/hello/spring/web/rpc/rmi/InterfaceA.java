@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.rpc.rmi;
+package com.fengquanwei.hello.spring.web.rpc.rmi;
 
 /**
  * InterfaceA

@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.rpc.rmi;
+package com.fengquanwei.hello.spring.web.rpc.rmi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,23 +7,19 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * Server
+ * Client
  *
  * @author fengquanwei
- * @create 2018/7/24 11:13
+ * @create 2018/7/24 11:50
  **/
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ServerConfig.class)
-public class Server {
+@ContextConfiguration(classes = ClientConfig.class)
+public class Client {
     @Autowired
     InterfaceA interfaceA;
 
     @Test
-    public void test() throws InterruptedException {
-        System.out.println("server start");
-
-        Thread.sleep(10 * 60 * 1000);
-
-        System.out.println("server stop");
+    public void test() {
+        System.out.println(interfaceA.methodA("Lask"));
     }
 }
