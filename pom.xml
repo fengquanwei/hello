@@ -14,6 +14,7 @@
         <module>hello-spring</module>
         <module>hello-spring-mvc</module>
         <module>hello-spring-security</module>
+        <module>hello-spring-web</module>
         <module>hello-hibernate</module>
         <module>hello-redis</module>
         <module>hello-kafka</module>
