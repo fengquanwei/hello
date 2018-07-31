@@ -1,5 +1,6 @@
 package com.fengquanwei.hello.spring.web.config;
 
+import com.fengquanwei.hello.spring.web.config.viewresolver.JsonViewResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

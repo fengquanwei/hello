@@ -19,8 +19,8 @@ public class MyMvcController {
      * http://localhost:8081/mvc/hello/Lask.html
      * http://localhost:8081/mvc/hello/Lask.json
      */
-    @RequestMapping("/hello/{name}")
-    public String hello(@PathVariable("name") String name, Model model) {
+    @RequestMapping("/cn/{name}")
+    public String contentNegotiating(@PathVariable("name") String name, Model model) {
         model.addAttribute("user", name);
         return "hello";
     }

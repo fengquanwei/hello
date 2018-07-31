@@ -1,4 +1,4 @@
-package com.fengquanwei.hello.spring.web.config;
+package com.fengquanwei.hello.spring.web.config.viewresolver;
 
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
