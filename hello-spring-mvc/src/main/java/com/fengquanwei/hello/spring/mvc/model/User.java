@@ -14,6 +14,9 @@ public class User {
     @Size(min = 4, max = 10)
     private String name;
 
+    public User() {
+    }
+
     public User(String name) {
         this.name = name;
     }

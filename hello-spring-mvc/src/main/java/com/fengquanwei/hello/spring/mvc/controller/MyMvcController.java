@@ -1,6 +1,6 @@
-package com.fengquanwei.hello.spring.web.controller;
+package com.fengquanwei.hello.spring.mvc.controller;
 
-import com.fengquanwei.hello.spring.web.model.User;
+import com.fengquanwei.hello.spring.mvc.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +22,8 @@ public class MyMvcController {
     @RequestMapping("/cn/{name}")
     public String contentNegotiating(@PathVariable("name") String name, Model model) {
         model.addAttribute("user", name);
-        return "hello";
+        model.addAttribute("name", name);
+        return "info";
     }
 
     /**
