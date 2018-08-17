@@ -57,6 +57,8 @@
 
         <validation.version>1.1.0.Final</validation.version>
         <jackson.version>2.4.3</jackson.version>
+        <cglib.version>3.2.5</cglib.version>
+        <logback.version>1.1.5</logback.version>
         <junit.version>4.11</junit.version>
     </properties>
 
@@ -294,6 +296,20 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+
+            <!--cglib-->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+
+            <!--logback-->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
             </dependency>
 
             <!--junit-->
