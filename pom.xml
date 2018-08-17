@@ -21,6 +21,7 @@
         <module>hello-util</module>
         <module>hello-algorithm</module>
         <module>hello-tomcat</module>
+        <module>hello-servlet</module>
     </modules>
 
     <properties>
