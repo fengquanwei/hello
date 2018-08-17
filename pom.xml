@@ -19,6 +19,7 @@
         <module>hello-kafka</module>
         <module>hello-zookeeper</module>
         <module>hello-util</module>
+        <module>hello-algorithm</module>
     </modules>
 
     <properties>
