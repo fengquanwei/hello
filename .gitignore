@@ -1,13 +1,16 @@
-# IntelliJ IDEA
+## intellij idea
 .idea/
 *.iml
 
-# Maven
+## maven
 target/
 
-# Eclipse
+## eclipse
 .settings/
 .metadata/
 Servers/
 .classpath
 .project
+
+## mac
+.DS_Store
