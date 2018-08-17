@@ -20,6 +20,7 @@
         <module>hello-zookeeper</module>
         <module>hello-util</module>
         <module>hello-algorithm</module>
+        <module>hello-tomcat</module>
     </modules>
 
     <properties>
