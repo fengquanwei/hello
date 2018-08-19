@@ -22,6 +22,7 @@
         <module>hello-algorithm</module>
         <module>hello-tomcat</module>
         <module>hello-servlet</module>
+        <module>hello-designpattern</module>
     </modules>
 
     <properties>
