@@ -23,6 +23,7 @@
         <module>hello-tomcat</module>
         <module>hello-servlet</module>
         <module>hello-designpattern</module>
+        <module>hello-maven</module>
     </modules>
 
     <properties>
